@@ -80,6 +80,7 @@ Example of JSON
 4. List of Completed Predictions
 <img width="2540" height="615" alt="image" src="https://github.com/user-attachments/assets/6343909b-481a-4eaf-8ea1-398c46bca2da" />
 
+
 5. Suspicious Node Visualization
 By clicking Run Predictions, users can visualize predictions on graph.
 <img width="2550" height="1294" alt="image" src="https://github.com/user-attachments/assets/82710a8b-6b8f-400a-873f-87a26ffd7774" />
