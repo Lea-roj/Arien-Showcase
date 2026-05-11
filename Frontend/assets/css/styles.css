@@ -1,0 +1,153 @@
+svg {
+    border: 1px solid #ccc;
+    display: block;
+}
+
+.node circle {
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+
+.node-hover circle {
+    stroke: #ffc107;
+    stroke-width: 4px;
+}
+
+.node text {
+    pointer-events: none;
+    font-size: 12px;
+}
+
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+}
+
+.highlight-node circle {
+    stroke: #ffc107;
+    stroke-width: 4px;
+}
+
+.highlight-link {
+    stroke: #ffc107 !important;
+    stroke-width: 4px !important;
+}
+
+#infoPanel {
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+}
+
+#closePanelBtn {
+    line-height: 1;
+    padding: 2px 8px;
+}
+
+.placeholder-message {
+    color: #888;
+    font-style: italic;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.btn-outline-secondary {
+    border-color: black !important;
+    color: black !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-secondary:hover {
+    background-color: rgb(64, 119, 161) !important;
+    color: #ebebeb !important;
+}
+
+.btn-outline-secondary:focus,
+.btn-outline-secondary:active,
+.btn-outline-secondary:focus:active {
+    background-color: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    border-color: black !important;
+}
+
+.node-search-highlight circle {
+    stroke: rgba(255, 0, 234, 0.67) !important;
+    stroke-width: 6 !important;
+    filter: drop-shadow(0 0 6px rgba(255, 0, 242, 0.67));
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-group .btn.active {
+    background-color: rgb(64, 119, 161) !important;
+    color: white !important;
+    border-color: rgb(64, 119, 161) !important;
+}
+
+.btn-group .btn {
+    background-color: white;
+    color: #333;
+}
+
+.tooltip-inner {
+    background-color: #202A44 !important;
+    color: white !important;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.tooltip.bs-tooltip-end .tooltip-arrow::before {
+    border-right-color: #202A44 !important;
+}
+
+.tooltip.bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: #202A44 !important;
+}
+
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: #202A44 !important;
+}
+
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: #202A44 !important;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.tab-content-inner {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 330px);
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+#suspiciousList {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-right: 6px;
+}
+
+#version-label {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 14px;
+    color: #c4c4c4;
+    padding: 4px 10px;
+    border-radius: 4px;
+    z-index: 9999;
+    pointer-events: none;
+    font-family: system-ui, sans-serif;
+}
+
+#nodeSearchBtn.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

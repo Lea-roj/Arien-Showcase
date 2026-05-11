@@ -1,0 +1,74 @@
+{
+  "relationships": [
+    {
+      "start": 0,
+      "end": 1,
+      "type": "SEND",
+      "properties": {
+        "name": "send0"
+      }
+    },
+    {
+      "start": 1,
+      "end": 3,
+      "type": "RECEIVE",
+      "properties": {
+        "name": "receive0"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": 0,
+      "properties": {
+        "first_mail": "2024-01-02",
+        "all_mails": 35,
+        "name": "B0007",
+        "description": "B0007 demonstrates strong organizational skills, reliability in logistics operations, and a deep emotional attachment to someone special, balancing professional duties with affectionate personal communications.",
+        "last_mail": "2024-04-20",
+        "label": 1
+      },
+      "labels": [
+        "Pid"
+      ]
+    },
+    {
+      "id": 1,
+      "properties": {
+        "date": "2024-01-02",
+        "image_description": "",
+        "latitude": "",
+        "language": "en",
+        "title": "Initial Plan",
+        "sender_id": "B0007",
+        "longitue": "",
+        "transcript": "",
+        "date_time": "2024-01-02T08:30",
+        "name": "msg0",
+        "attachement": "",
+        "translation": "",
+        "time": "08:30",
+        "text": "The shipment is ready. Pick up on 5th January at Point Z. Use Route Alpha.",
+        "recipient_id": "C0001",
+        "label": 0
+      },
+      "labels": [
+        "Msg"
+      ]
+    },
+    {
+      "id": 3,
+      "properties": {
+        "first_mail": "2024-01-03",
+        "all_mails": 54,
+        "name": "C0001",
+        "description": "C0001 exhibits characteristics of a careful and strategic individual, focused on logistics and efficiency in operations, while also displaying a carefree and sociable side when discussing personal interactions and socializing.",
+        "last_mail": "2024-06-17",
+        "label": 1
+      },
+      "labels": [
+        "Pid"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Graph Visualization</title>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+      html, body {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          overflow: hidden;
+          background: #ffffff;
+      }
+
+      .panel-header {
+          font-size: 18px;
+          font-weight: 700;
+          letter-spacing: 0.4px;
+          margin-bottom: 20px;
+          color: #ffffff;
+      }
+
+      #graphContainer {
+          flex: 1;
+          height: 100%;
+          position: relative;
+          background: #ffffff;
+      }
+
+      #graphContainer svg {
+          width: 100%;
+          height: 100%;
+      }
+
+      #chartsContainer {
+          flex: 1;
+          overflow: auto;
+          min-width: 0;
+      }
+
+      #leftPanel {
+          background: #18181b;
+          color: #ffffff;
+          display: flex;
+          flex-direction: column;
+          overflow-y: auto;
+          padding: 16px;
+          box-sizing: border-box;
+      }
+
+      #appContainer {
+          display: flex;
+          height: 100vh;
+          width: 100vw;
+      }
+
+    #explainPanel h2 {
+      margin-top: 0;
+    }
+
+    .chart-block {
+      margin-bottom: 30px;
+      background: #1c1c1c;
+      border-radius: 8px;
+      padding: 10px;
+    }
+      .chart-title {
+          font-size: 16px;
+          font-weight: 600;
+          letter-spacing: 0.3px;
+          margin-bottom: 12px;
+          color: #f3f4f6;
+      }
+
+    .chart-scroll {
+      height: 300px;
+      overflow-y: auto;
+      overflow-x: auto;
+      border: 1px solid #333;
+      border-radius: 6px;
+      padding: 6px;
+      min-width: 0;
+      max-width: 300px;
+    }
+
+    svg {
+      font-family: system-ui;
+    }
+
+    .chart-scroll::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .chart-scroll::-webkit-scrollbar-thumb {
+      background: #444;
+      border-radius: 4px;
+    }
+
+    .legend-container {
+        position: absolute;
+        bottom: 20px;
+        left: 500px;
+        width: 300px;
+        height: 40px;
+        pointer-events: none;
+    }
+
+    .legend-labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: #333;
+        margin-top: 4px;
+    }
+
+      body {
+          font-family: "Inter", "Segoe UI", Roboto, -apple-system, sans-serif;
+          font-size: 14px;
+          line-height: 1.5;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+      }
+
+  </style>
+</head>
+<body>
+    <div id="appContainer">
+        <div id="leftPanel">
+            <div class="panel-header">
+                Explanation for node ID:
+                <span id="explainedNodeId"></span>
+            </div>
+            <div id="chartsContainer"></div>
+        </div>
+        <div id="graphContainer"></div>
+        <div id="nodeLegend" class="legend-container"></div>
+    </div>
+</body>
+</html>

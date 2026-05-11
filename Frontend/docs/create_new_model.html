@@ -1,0 +1,190 @@
+<div id="content">
+    <h1 class="content-title">Choose Model</h1>
+    <div class="d-flex flex-column flex-fill content-body">
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Learning Mode:</label>
+            <div class="btn-group" role="group" aria-label="Learning mode">
+
+                <input type="radio" class="btn-check" name="learningMode" id="modeSupervised" autocomplete="off" checked>
+                <label class="btn btn-outline-primary d-flex align-items-center gap-1" for="modeSupervised">
+                    Supervised
+                    <span class="material-symbols-outlined" style="font-size:18px; cursor:pointer;" data-bs-toggle="tooltip" data-bs-placement="right"
+                          title="Supervised mode requires a labeled dataset. You must choose a label attribute (e.g., 'label', 'is_suspicious', etc.).">info
+                    </span>
+                </label>
+
+                <input type="radio" class="btn-check" name="learningMode" id="modeUnsupervised" autocomplete="off">
+                <label class="btn btn-outline-secondary d-flex align-items-center gap-1" for="modeUnsupervised">
+                    Unsupervised
+                    <span class="material-symbols-outlined" style="font-size:18px; cursor:pointer;" data-bs-toggle="tooltip"
+                          data-bs-placement="right" title="Unsupervised mode does NOT require labeled data. The system detects anomalies automatically.">info
+                    </span>
+                </label>
+            </div>
+        </div>
+
+
+        <div class="mb-4">
+            <div class="d-flex" style="padding-right: 20px">
+                <h3 class="m-0" style="padding-bottom:20px">Select Model</h3>
+
+                <span id="modelHelpBtn"  style="cursor:pointer; font-size:20px; padding-bottom:20px; display:inline-flex; align-items:center;"
+                      data-bs-toggle="tooltip" data-bs-placement="right" title="The framework provides a selection of different GNN architectures and parameterizations.
+                             The available architectures include several well-recognized, state-of-the-art methods
+                             successfully applied to fraud and anomaly detection tasks."
+                        >
+                        <span class="material-symbols-outlined" style="font-size:30px; padding-left:10px;">
+                            info
+                        </span>
+                </span>
+
+            </div>
+            <div class="d-flex gap-2">
+                <select id="selectModel" class="form-select flex-grow-1">
+                    <option selected disabled>Choose a model …</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="mb-4" id="parameterSection">
+            <div class="d-flex align-items-center justify-content-between">
+                <h3 class="m-0" style="padding-bottom:20px">Select Parameters</h3>
+            </div>
+            <p>
+                Click
+                <button id="toggleAdvancedBtn"
+                        class="btn btn-outline-secondary btn-sm px-2 py-0"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#advancedOptions"
+                        aria-expanded="false"
+                        aria-controls="advancedOptions"
+                        disabled>
+                    Advanced settings
+                </button>
+                to set your own parameters, or click "Confirm" to use default parameters.
+            </p>
+            </br>
+
+            <div id="advancedOptions" class="collapse mt-3">
+                <p>Set your own parameters:</p>
+                <div id="defaultParamEditor" class="mb-4"></div>
+
+                <div id="paramList" class="list-group mb-2"></div>
+
+                <div id="parameterCardContainer" class="mt-3 d-none">
+                    <div class="card shadow-sm border">
+                        <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                            <span><strong id="parameterSetTitle">Selected Parameter Set</strong></span>
+                            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#parameterCollapse" aria-expanded="true" aria-controls="parameterCollapse">
+                                Show/Hide
+                            </button>
+                        </div>
+                        <div id="parameterCollapse" class="collapse show">
+                            <div class="card-body p-3">
+                                <table class="table table-hover table-sm mb-0">
+                                    <thead class="table-light">
+                                    <tr>
+                                        <th scope="col">Parameter</th>
+                                        <th scope="col">Value</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="parameterTableBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-check mt-3">
+                <input class="form-check-input" type="checkbox" id="cbNodeEmbeddings">
+                <label class="form-check-label fw-semibold" for="cbNodeEmbeddings">
+                    Generate Node Embeddings
+                </label>
+                <span id="modelHelpBtn"  style="cursor:pointer; font-size:20px; padding-bottom:20px; display:inline-flex; align-items:center;"
+                      data-bs-toggle="tooltip" data-bs-placement="right" title="Recommended when nodes contain meaningful text fields (e.g., descriptions, transcripts, emails)."
+                >
+                <span class="material-symbols-outlined" style="font-size:20px">info</span>
+                </span>
+            </div>
+
+            <div class="form-check mt-2" id="graphSmoteBlock">
+                <input class="form-check-input" type="checkbox" id="cbGraphSmote">
+                <label class="form-check-label fw-semibold" for="cbGraphSmote">
+                    Use GraphSMOTE
+                </label>
+                <span id="modelHelpBtn"  style="cursor:pointer; font-size:20px; padding-bottom:20px; display:inline-flex; align-items:center;"
+                      data-bs-toggle="tooltip" data-bs-placement="right" title="If your dataset has only a few suspicious nodes, GraphSMOTE creates additional artificial examples so the model can learn to recognize suspicious behavior more accurately."
+                >
+                <span class="material-symbols-outlined" style="font-size:20px">info</span>
+                </span>
+            </div>
+            <div class="d-flex align-items-center gap-2" style="margin-top: 40px;">
+                <select id="parameterQuickSelect" class="form-select" style="max-width: 320px;" disabled>
+                    <option disabled>Choose parameters…</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-3" id="trainSection">
+            <h3 style="padding-bottom:20px">Train Model</h3>
+            <div class="mb-3" id="labelInputContainer" style="display: none;">
+                <label for="labelSelect" class="form-label fw-semibold">Select attribute for training:</label>
+                <select id="labelSelect" class="form-select">
+                    <option selected disabled>Choose attribute from dataset…</option>
+                </select>
+            </div>
+
+            <div class="d-flex align-items-center gap-2">
+                <button id="startLearning" class="btn btn-primary" disabled>Start Learning</button>
+                <div id="learningStatus" class="d-none mb-0">
+                </div>
+            </div>
+            <div id="learningStatusList" class="mt-3"></div>
+        </div>
+
+        <div class="mb-3">
+            <h3 style="padding-bottom:20px">Training Completed</h3>
+            <div id="completedStatusList" class="mt-2"></div>
+        </div>
+
+        <div class="mb-3" id="unsupervisedPanel">
+            <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                <label for="unsupervisedModeSelect" class="form-label mb-0 fw-semibold">
+                    Prediction mode:
+                </label>
+                <select id="unsupervisedModeSelect"
+                        class="form-select form-select-sm"
+                        style="max-width: 600px;">
+                    <option value="ae">Autoencoder (AE) – Best general anomaly detection</option>
+                    <option value="if">Isolation Forest (IF) – Strong for sparse/tabular patterns</option>
+                    <option value="som">Self-Organizing Map (SOM) – Cluster-based anomalies</option>
+                </select>
+            </div>
+
+            <div id="embeddingsUnsupervisedBlock" class="form-check mb-3" style="display:none; margin-top: 40px">
+                <input class="form-check-input" type="checkbox" id="cbNodeEmbeddingsUnsupervised">
+                <label class="form-check-label fw-semibold" for="cbNodeEmbeddingsUnsupervised">
+                    Generate Node Embeddings
+                </label>
+                <span id="modelHelpBtn"  style="cursor:pointer; font-size:20px; padding-bottom:20px; display:inline-flex; align-items:center;"
+                      data-bs-toggle="tooltip" data-bs-placement="right" title="Recommended when nodes contain meaningful text fields (e.g., descriptions, transcripts, emails)."
+                >
+                <span class="material-symbols-outlined" style="font-size:20px">info</span>
+                </span>
+            </div>
+
+            <div class="d-flex align-items-center gap-2" style="margin-top: 40px">
+                <button id="runPredictionsUnsupervised" class="btn btn-primary">Run Predictions</button>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <h3 style="padding-bottom:20px">Prediction Status</h3>
+            <div id="predictionStatusList" class="mt-2"></div>
+        </div>
+
+    </div>
+</div>

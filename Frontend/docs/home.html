@@ -1,0 +1,145 @@
+<div id="content">
+
+    <h1 class="content-title">Choose Data</h1>
+
+    <div class="d-flex flex-column flex-fill content-body">
+
+        <div class="mb-4">
+            <div class="d-flex align-items-center pb-3">
+
+                <div class="d-flex align-items-center gap-2" style="padding-right: 20px">
+                    <h3 class="mb-0">Upload new data</h3>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <a href="/docs/example-graph.json"
+                       download
+                       class="btn btn-outline-primary btn-sm">
+                        Download JSON example
+                    </a>
+
+                    <button id="toggleExampleBtn"
+                            class="btn btn-outline-secondary btn-sm"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#jsonExample">
+                        Show JSON example
+                    </button>
+                </div>
+            </div>
+            <div id="jsonExample" class="collapse mt-3" style="padding-bottom: 50px">
+                <div class="card">
+                    <div class="card-body bg-light">
+<pre style="height: 500px"><code>
+{
+  "relationships": [
+    {
+      "start": 0,
+      "end": 1,
+      "type": "SEND",
+      "properties": {
+        "name": "send0"
+      }
+    },
+    {
+      "start": 1,
+      "end": 3,
+      "type": "RECEIVE",
+      "properties": {
+        "name": "receive0"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": 0,
+      "properties": {
+        "first_mail": "2024-01-02",
+        "all_mails": 35,
+        "name": "B0007",
+        "description": "B0007 demonstrates strong organizational skills, reliability in logistics operations.",
+        "last_mail": "2024-04-20",
+        "label": 1
+      },
+      "labels": [
+        "Pid"
+      ]
+    },
+    {
+      "id": 1,
+      "properties": {
+        "date": "2024-01-02",
+        "image_description": "",
+        "latitude": "",
+        "language": "en",
+        "title": "Initial Plan",
+        "sender_id": "B0007",
+        "longitue": "",
+        "transcript": "",
+        "date_time": "2024-01-02T08:30",
+        "name": "msg0",
+        "attachement": "",
+        "translation": "",
+        "time": "08:30",
+        "text": "The shipment is ready. Pick up on 5th January at Point Z. Use Route Alpha.",
+        "recipient_id": "C0001",
+        "label": 0
+      },
+      "labels": [
+        "Msg"
+      ]
+    },
+    {
+      "id": 3,
+      "properties": {
+        "first_mail": "2024-01-03",
+        "all_mails": 54,
+        "name": "C0001",
+        "description": "C0001 exhibits characteristics of a careful and strategic individual.",
+        "last_mail": "2024-06-17",
+        "label": 1
+      },
+      "labels": [
+        "Pid"
+      ]
+    }
+  ]
+}
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-end">
+                <div class="col-md-6">
+                    <label for="jsonFile" class="form-label">Upload JSON File</label>
+                    <input class="form-control flex-grow-1" type="file" id="jsonFile" accept=".json">
+                </div>
+                <div class="col-md-6">
+                    <label for="jsonUrl" class="form-label">Or Upload JSON with URL</label>
+                    <input type="url" class="form-control flex-grow-1" id="jsonUrl" placeholder="https://example.com/data.json">
+                </div>
+                <div class="col-md-12 mt-3">
+                    <label for="jsonDescription" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="jsonDescription" placeholder="Enter description">
+                </div>
+            </div>
+            <div class="col-md-1 d-grid" style="margin-top: 40px">
+                <button id="uploadBtn" type="button" class="btn btn-primary">Upload</button>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <h3 style="padding-bottom: 20px">Select Data</h3>
+
+            <div class="d-flex gap-2">
+                <label for="previousData"></label>
+                <select class="form-select flex-grow-1" id="previousData">
+                    <option selected disabled>Select data</option>
+                </select>
+                <div class="mt-2">
+                    <i class="bi bi-trash text-danger delete-icon" id="deleteBtn" style="font-size: 2rem; cursor: pointer;" title="Delete Selected Dataset"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
