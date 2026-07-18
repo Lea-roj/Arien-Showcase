@@ -9,7 +9,7 @@
 ARIEN is an interactive graph machine learning platform for detecting suspicious nodes in graph-structured data.
 The tool supports supervised and unsupervised anomaly detection, graph neural network model selection, node embeddings, GraphSMOTE, interactive graph visualization, manual annotation, and explainable AI workflows.
 
-<img width="1728" height="1000" alt="Screenshot 2025-06-28 at 18 19 27" src="https://github.com/user-attachments/assets/d34cf436-5bca-4d86-951c-9aab8554f0d5" />
+<img width="2559" height="1293" alt="image" src="https://github.com/user-attachments/assets/b7485571-ca0e-447e-90c1-dce5aa4aba34" />
 
 ---
 ARIEN is designed for suspicious entity detection in complex graph datasets such as communication networks, transaction graphs, investigation datasets, and relationship-based data. The platform enables users to:
@@ -24,7 +24,8 @@ ARIEN is designed for suspicious entity detection in complex graph datasets such
 - Explain model predictions using node, edge, and feature importance
 - Export updated graph data and suspicious-node subsets
 
-Video Demonstration: [Demo](https://www.youtube.com/watch?v=6RsYCFfSZsk)
+Video Demonstration - Showcase 1: [Demo](https://www.youtube.com/watch?v=6RsYCFfSZsk)
+Video Demonstation - Showcase 2 (new functions): [Demo](https://youtu.be/-rMCHqPN7Tw)
 
 ---
 ## Why Graph-Based Suspicious Node Detection?
@@ -98,19 +99,6 @@ Example of prediction result using Unsupervised learning:
 <img width="2026" height="1295" alt="image" src="https://github.com/user-attachments/assets/11a95cfc-d021-4f4e-8fe3-518541ad46f1" />
 
 ---
-## Architecture
-
-```mermaid
-flowchart TD
-    A[Frontend Interface] --> B[REST API]
-    B --> C[Dataset Service]
-    B --> D[Training Service]
-    B --> E[Prediction Service]
-    B --> F[Explanation Service]
-    F --> G[Graph ML Backend]
-```
-
----
 
 ## Technologies
 
@@ -130,7 +118,6 @@ flowchart TD
 ## My Contributions
 
 * Developed frontend workflows for suspicious node detection
-* Implemented dataset upload, selection, and deletion functionality
 * Built model selection and parameter configuration interfaces
 * Added support for supervised and unsupervised learning modes
 * Developed D3.js graph visualization components
